@@ -15,9 +15,13 @@ def SampleRecord():
     r = requests.get("http://uinames.com/api?ext&region=United%20States",
                      timeout=2.0)
     # 1. Add a line of code here to decode JSON from the response.
-
+    r_json = r.json()
+    name = r_json["name"]
+    surname = r_json["surname"]
+    pin = r_json["credit_card"]["pin"]
     return "My name is {} {} and the PIN on my card is {}.".format(
         # 2. Add the correct fields from the JSON data structure.
+        name, surname, pin
     )
 
 if __name__ == '__main__':

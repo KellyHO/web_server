@@ -36,6 +36,8 @@ def test_CheckURI_good():
     from BookmarkServer import CheckURI
     try:
         good = CheckURI("https://www.google.com/")
+        # good = CheckURI("http://www.google.com/")
+
     except NotImplementedError:
         return ("CheckURI raised NotImplementedError.\n"
                 "Do step 1, and make sure to remove the 'raise' line.")
